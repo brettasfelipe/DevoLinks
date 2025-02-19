@@ -32,7 +32,7 @@ Esse projeto está sob a licença MIT.
 
 1. Clone este repositório:  
    ```sh
-   git clone https://github.com/brettasfelipe/devolinks.git
+   git clone https://github.com/brettasfelipe/DevoLinks.git
 
 ##
 
