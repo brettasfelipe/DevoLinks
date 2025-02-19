@@ -39,7 +39,7 @@ body {
   */
   background: var(--bg-url) no-repeat top center/cover; /* para o size é necessario uso de barra */
   min-height: 100vh;
-  overflow: hidden;
+  
 }
 
 body * {
