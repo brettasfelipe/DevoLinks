@@ -112,12 +112,21 @@ body * {
     -50%
   ); /* transforma o elemento em relacao a si proprio */
   /* fazendo top e transform com translate (50% com sinais opostos) centraliza um elemento em relação a outro */
+  animation: slide-back 0.2s; /* nesse caso colocar o forwards seria redundante, pois ja esta definido que o botao ficara a esquerda (linha 109) */
 }
 
 .light #switch button {
+  /*
   right: 0;
   left: initial;
-  /* quando o ligth estiver ativado, o botao ira se posicionar a direita, sendo sua posicao inicial a esquerda (left: initial); */
+   quando o ligth estiver ativado, o botao ira se posicionar a direita, sendo sua posicao inicial a esquerda (left: initial); */
+
+  animation: slide-in 0.2s forwards; /* faz a animacao criada na at-rule (nomeada de slide-in), define um tempo (0.4s) e define que ela mantera as propriedades do final da animacao, ou seja, do to (forwards) */
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
+  
 }
 
 #switch span {
@@ -206,4 +215,23 @@ footer {
   padding: 24px 0;
   font-weight: 400;
   font-size: 14px;
+}
+
+/* At-rules */
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%
+  }
+  to {
+    left: 0;
+  }
 }
