@@ -24,8 +24,17 @@ Este projeto foi desenvolvido com:
 
 Este página é o projeto final do curso **Discover** da **Rocketseat**.
 
+## 📜 Licença 
+
+Esse projeto está sob a licença MIT. 
+
 ## 🔧 Como usar
 
 1. Clone este repositório:  
    ```sh
    git clone https://github.com/brettasfelipe/devolinks.git
+
+##
+
+<footer> Feito por 
+<a href="https://github.com/brettasfelipe"> Felipe Brettas  <a> 🙂 <footer>
