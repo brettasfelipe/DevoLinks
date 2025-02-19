@@ -51,13 +51,14 @@ body * {
 }
 
 #container {
-  width: 360px; /* largura */
+  width: 100%; /* largura */
   /* a altura deve ser fluida, se comporta de acordo com os elementos colocados no container */
   /*hh
   margin-right: auto;
   margin-left: auto;
   podem ser trocadas por: 
   */
+  max-width: 360px;
   margin: auto; /* serve apenas para direito e esquerdo, os preenchimentos de margem em y n sao feitos automaticamente */
   margin-top: 56px;
   /* é possível simplificar a propriedade do margin, sem ter a necessidade de colocar -top -right -bottom -left. podemos colocar margin: (top) (right) (bottom) (left);
