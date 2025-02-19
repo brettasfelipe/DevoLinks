@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* uma pseudo-classe */
+  --text-color: white;
+  --bg-url: url(./assets/wallpaperDark.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.2);
+  --surface-color-hover: rgba(255, 255, 255, 0.05);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light {
+  /* nesse caso, prevalece por causa do cascading */
+  --text-color: black;
+  --bg-url: url(./assets/wallpaperLight.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.2);
+  --surface-color-hover: rgba(0, 0, 0, 0.05);
+  --highlight-color: rgba(0, 0, 0, 0.2);
+  --switch-bg-url: url(./assets/sun.svg);
+}
+
+body {
+  /*
+  background-image: url(./assets/bg-mobile.jpg); /* por padrao a imagem apresenta repeticoes na tela 
+  background-repeat: no-repeat; /* essa propriedade impede a repeticao da imagem 
+  background-position: top center; /* centraliza a imagem  
+  background-size: cover; /* cobre todo o espaco visivel no body 
+
+  é possivel agrupar todas essas informacoes em apenas uma propriedade (short-hand ou atalho):
+  background: color image repeat position/size 
+
+  */
+  background: var(--bg-url) no-repeat top center/cover; /* para o size é necessario uso de barra */
+}
+
+body * {
+  /* o asterisco e colocado para definir que TODOS os elementos dentro do body seguirao essa config */
+  font-family: "Inter", serif; /* define qual a familia da fonte e qual e a fonte a ser usada */
+  color: var(
+    --text-color
+  ); /* padroniza a cor da fonte que esta sendo utilizada */
+}
+
+#container {
+  width: 360px; /* largura */
+  /* a altura deve ser fluida, se comporta de acordo com os elementos colocados no container */
+  /*hh
+  margin-right: auto;
+  margin-left: auto;
+  podem ser trocadas por: 
+  */
+  margin: auto; /* serve apenas para direito e esquerdo, os preenchimentos de margem em y n sao feitos automaticamente */
+  margin-top: 56px;
+  /* é possível simplificar a propriedade do margin, sem ter a necessidade de colocar -top -right -bottom -left. podemos colocar margin: (top) (right) (bottom) (left);
+  se colocar apenas duas propriedades, funciona dessa maneira, margin: (top bottom) (right left); No caso de tres propriedades fica, margin: (top) (right left) (bottom);  */
+  /* nesse exemplo seria margin: 56px auto auto auto; */
+  padding: 0 24px;
+}
+
+/*profile */
+
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+#profile img {
+  height: auto;
+  width: 112px;
+  display: block; /* uma img é um elemento inline-block */
+  margin: auto; /* ou poderia estabelecer o parent (#profile) como centralizado (text-align: center), que tambem alinharia (somente para elementos que tenham comportamento INLINE ) */
+}
+
+#profile p {
+  font-weight: 500; /* "grau" de negrito */
+  font-size: 16px; /* padrao dos navegadores, nao necessario colocar */
+  line-height: 24px; /* altura da linha do texto */
+  /* mesmo sendo um elemento block, o texto dentro dele acaba por se centraliza pois o TEXTO é um elemento inline, mas apenas o texto que centraliza, não o bloco inteiro. */
+  margin-top: 8px;
+}
+
+/* button */
+
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 0 auto;
+  padding: 4px 0;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0; /* deixa o botao sem bordas */
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  left: 0; /* deixa o botao do dark mode a esquerda */
+  top: 50%; /* transforma o elemento em relacao ao seu relativo */
+  transform: translateY(
+    -50%
+  ); /* transforma o elemento em relacao a si proprio */
+  /* fazendo top e transform com translate (50% com sinais opostos) centraliza um elemento em relação a outro */
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+  /* quando o ligth estiver ativado, o botao ira se posicionar a direita, sendo sua posicao inicial a esquerda (left: initial); */
+}
+
+#switch span {
+  display: block; /* display in-line n aceita prop como largura */
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/* links */
+
+#container ul {
+  list-style: none; /* remove os "pontos" antes dos itens da lista */
+  display: flex; /* display: flex; é flexivel, encaixa os elementos */
+  flex-direction: column; /* o flex direction pode ser row ou column, que define se os elementos ficarao lado a lado ou um acima do outro, respectivamente, o padrao em display: flex é row */
+  gap: 16px; /* define um espaco entre os elementos */
+  padding: 24px 0px;
+}
+
+#container ul li a {
+  text-align: center;
+  text-decoration: none; /* remove a linha embaixo do texto com link, existem tambem o over line, line-through e underline */
+  border: 1px solid var(--stroke-color);
+  display: flex;
+  padding: 16px 24px;
+  justify-content: center; /* pelo fato de estar em display flex, alinhar com text-align n funciona (somente para block), por isso do justify content */
+  /* caso estiver sem um padding, tendo apenas uma altura pre-definida, é necessário alinhar os itens com o meio do bloco, com "allign-itens" */
+  background-color: var(
+    --surface-color
+  ); /* red green blue alpha (transparencia) */
+  border-radius: 8px; /* arredonda as bordas */
+  backdrop-filter: blur(4px); /* aplica um filtro de embaçado (blur) */
+  -webkit-backdrop-filter: blur(
+    4px
+  ); /* mesma coisa da linha de cima, mas com o prefixo -webkit- para ter suporte a alguns navegadores (safari) */
+  font-weight: 500; /* acima de 400 é BOLD */
+  font-size: 16px; /* ja padronizado nos navegadores */
+  transition: background 0.2s; /* aplica uma suavizacao na transicao da opacidade do plano de fundo do botao ( deve ser aplicado no a sem hover ); */
+}
+
+/* pseudo-selector */
+#container ul li a:hover {
+  /* aplica as coisas quando passa o mouse por cima */
+  border: 1.5px solid var(--text-color);
+  background-color: var(--surface-color-hover);
+}
+
+/* social links */
+
+#social-links {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  gap: 12px;
+  font-size: 24px; /* muda o tamanho de todos os elementos dentro do social links */
+}
+
+#social-links ion-icon {
+  padding: 8px 8.75px;
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 7.75px;
+  transition: background 0.2s; /* suaviza a transicao */
+  border-radius: 50%; /* 50% gera um circulo perfeito */
+}
+
+#social-links a:hover {
+  background: var(--highlight-color);
+  border-radius: 50%;
+}
+
+footer p {
+  display: inline;
+}
+
+footer {
+  text-align: center;
+  padding: 24px 0;
+  font-weight: 400;
+  font-size: 14px;
+}

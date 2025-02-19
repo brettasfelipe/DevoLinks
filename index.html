@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- Atribui que e um documento em html 5-->
+<html lang="pt-BR" class="light">
+  <!-- Hoot element ou Doc element c/ atributo linguagem-->
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Atrela as fontes que serao usadas ao codigo -->
+
+    <!-- Configuracoes do doc (em sua maioria) nao visiveis p/ quem acessa a pagina -->
+    <meta charset="UTF-8" />
+    <!-- charset = conjunto de caracteres usados na pagina -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- viewport = parte visivel. Essa meta config define que
+        a viewport deve se adaptar a escala do dispositivo-->
+    <!-- meta configs = Configuracoes do proprio documento -->
+    <title>DevLinks FB</title>
+    <!-- Titulo da pagina, visivel-->
+    <link rel="stylesheet" href="./style.css" />
+    <!-- rel = relacao; stylesheet = "pagina de estilo"-->
+  </head>
+  <body>
+    <!-- Parte visivel -->
+    <div id="container">
+      <div id="profile">
+        <img src="./assets/Anakin.png" alt="Foto do Anakin Skywalker" />
+        <p>@dev.brettas</p>
+      </div>
+      <div id="switch" onclick="toggleMode()"> <!--Informa que ao clicar é para executar a funcao () toggleMode, que deve ser criada pelo JS-->
+        <button> 
+        </button> 
+        <span></span>    
+      </div>
+      <ul>
+        <li>
+          <a href="#" target="_blank">Redirect 1</a>
+        </li>
+        <li>
+          <a href="#" target="_blank">Redirect 2</a>
+        </li>
+        <li>
+          <a href="#" target="_blank">Redirect 3</a>
+        </li>
+        <li>
+          <a href="#" target="_blank">Redirect 4</a>
+        </li>
+        <!-- O target="_blank" faz com que ao acessar o link, ele abra em outra aba. -->
+      </ul>
+      <div id="social-links">
+        <a href="#" target="_blank">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+        <a href="#" target="_blank">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+        <a href="#" target="_blank">
+          <ion-icon name="logo-youtube"></ion-icon>
+        </a>
+        <a href="#" target="_blank">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+      </div>  
+      <footer> <!-- tag usada para rodapé, nao sendo necessario o uso de p para criar um paragrafo -->
+        <p> Feito por </p> 
+        <a href="#"> Felipe Brettas</a>
+      </footer>
+      </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script> <!-- "Plugin" para uso de icones -->
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> <!-- usage: <ion-icon name="heart"></ion-icon> -->
+    <script src="./script.js">
+    </script>
+
+  </body>
+</html>
